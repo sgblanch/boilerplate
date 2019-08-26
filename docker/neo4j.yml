@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  neo4j:
+    image: neo4j:3.5
+    volumes:
+      - ${HOME}/docker/data/neo4j:/data
+      - ${HOME}/docker/logs/neo4j:/logs
+    environment:
+      NEO4J_AUTH: none
+      SECURE_FILE_PERMISSIONS: "yes"
+    ports:
+      - 7474:7474
+      - 7687:7687
