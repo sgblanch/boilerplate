@@ -9,6 +9,14 @@ Examples for running services stacks using `docker swarm`.  I reserve the right 
 docker image ls
 docker container ls
 ```
+### Remove
+```bash
+docker container ls -a
+docker container rm ID|NAME
+docker image ls
+docker image rm ID
+```
+
 # docker swarm
 ## What is Docker Swarm?
 ## Stacks and Services
@@ -44,9 +52,15 @@ mv graph.db ${HOME}/docker/neo4j/databases/
 ```
 
 # Jupyter
+Two stacks are provided.  The scipy stack is python only and is 3.5GB.  The datascience stack is 5GB and includes R and julia.  There are other stacks available and switching stacks requires changing one line in the YAML file.  Read [jupyter's documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#core-stacks) to see what stacks are available.
 
 ```bash
 mkdir -p "${HOME}/docker/jupyter"
+```
+
+```bash
+docker container ls
+docker container exec ID|NAME jupyter notebook list
 ```
 
 ```bash
