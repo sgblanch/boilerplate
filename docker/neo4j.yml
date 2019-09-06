@@ -4,10 +4,12 @@ services:
   neo4j:
     image: neo4j:3.5
     volumes:
-      - ${HOME}/docker/data/neo4j:/data
-      - ${HOME}/docker/logs/neo4j:/logs
+      - ${HOME}/docker/neo4j/databases:/data/databases
+      - ${HOME}/docker/neo4j/logs:/logs
+      - ${HOME}/docker/neo4j/plugins:/plugins
     environment:
       NEO4J_AUTH: none
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
       SECURE_FILE_PERMISSIONS: "yes"
     ports:
       - 7474:7474
