@@ -44,9 +44,7 @@ docker stack rm NAME
 
 ### Setup
 ```bash
-mkdir -p ${HOME}/docker/neo4j/{databases,logs,plugins}
-
-(cd ${HOME}/docker/neo4j/plugins; curl -sSLOJ https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.5.0.4/apoc-3.5.0.4-all.jar)
+mkdir -p ${HOME}/docker/neo4j/{databases,logs}
 
 mv graph.db ${HOME}/docker/neo4j/databases/
 ```
